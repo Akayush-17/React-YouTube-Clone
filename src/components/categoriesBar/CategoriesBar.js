@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./_categoriesBar.scss"
 
 const keywords = [
@@ -23,15 +23,26 @@ const keywords = [
 
 
 const CategoriesBar = () => {
+
+  const [activeElement,setActiveElement]=useState('All')
+  const handleClick=(value)=>{
+    setActiveElement(value)
+  }
   return (
-    <div className='CategoriesBar'>
+    <div className="CategoriesBar">
       {
         keywords.map((value,i)=> (
-          <span key={i}>{value}</span>
+          <span className={activeElement === value ? "active":''}
+          onClick={()=>handleClick(value)}
+          key={i}>{value}
+          
+          </span>
         ))
       }
+
     </div>
   )
+  
 }
 
 export default CategoriesBar
