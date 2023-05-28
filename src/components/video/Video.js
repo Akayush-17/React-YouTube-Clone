@@ -20,7 +20,7 @@ const Video=({video})=> {
   const seconds = moment.duration(duration).asSeconds()
   const _duration = moment.utc(seconds * 1000).format('mm:ss')
 
-
+  const _videoId =id?.videoId || id;
 
 
 
@@ -31,14 +31,14 @@ const Video=({video})=> {
        } = await request('/videos', {
           params: {
              part: 'contentDetails,statistics',
-             id: id,
+             id: _videoId,
           },
        })
        setDuration(items[0].contentDetails.duration)
        setViews(items[0].statistics.viewCount)
     }
     get_video_details()
- }, [id])
+ }, [_videoId])
   
 
  useEffect(() => {

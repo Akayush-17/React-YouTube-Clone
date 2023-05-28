@@ -4,6 +4,7 @@ export const homeVideosReducer =(state={
     videos:[],
     loading:false,
     nextPageToken:null,
+    activeCategory:'All',
 },
 action)=> {
     const {type,payload}=action
@@ -14,6 +15,7 @@ action)=> {
             videos:payload.videos,
             loading:false,
             nextPageToken:payload.nextPageToken,
+            activeCategory:payload.activeCategory,
         }
         case HOME_VIDEO_FAIL:return{
             ...state,

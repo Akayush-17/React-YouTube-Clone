@@ -5,10 +5,11 @@ import Sidebar from './components/sidebar/Sidebar';
 import HomeScreen from './components/screens/HomeScreen';
 import LoginScreen from './components/screens/login'
 import {Redirect, Route, Switch, useHistory} from 'react-router-dom'
-
+import HomeScreen2 from './components/screens/HomeScreen2';
 
 import "./_app.scss"
 import { useSelector } from 'react-redux';
+import WatchScreen from './components/screens/WatchScreen';
 
 const Layout = ({children}) =>{
 
@@ -59,6 +60,11 @@ const App = () => {
     <Route path='/search'>
       <Layout>
         <h1>Search Result</h1>
+      </Layout>
+    </Route>
+    <Route path='/watch/:key'>
+      <Layout>
+       <WatchScreen/>
       </Layout>
     </Route>
 
