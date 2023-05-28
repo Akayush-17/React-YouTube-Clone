@@ -39,7 +39,7 @@ const App = () => {
   useEffect(()=>{
 
      if(!loading && !accessToken){
-      history.push('/auth')
+      history.push('/')
 
      }
 
