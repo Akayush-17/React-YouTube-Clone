@@ -51,7 +51,7 @@ const App = () => {
     <Switch>
     <Route path="/" exact>
       <Layout>
-        <HomeScreen/>
+        <HomeScreen2/>
       </Layout>
     </Route>
     <Route path='/auth'>
